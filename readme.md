@@ -1,36 +1,72 @@
-# Quantum Mechanical Keyboard Firmware
+# Corne and Lucky
 
-[![Current Version](https://img.shields.io/github/tag/qmk/qmk_firmware.svg)](https://github.com/qmk/qmk_firmware/tags)
-[![Discord](https://img.shields.io/discord/440868230475677696.svg)](https://discord.gg/qmk)
-[![Docs Status](https://img.shields.io/badge/docs-ready-orange.svg)](https://docs.qmk.fm)
-[![GitHub contributors](https://img.shields.io/github/contributors/qmk/qmk_firmware.svg)](https://github.com/qmk/qmk_firmware/pulse/monthly)
-[![GitHub forks](https://img.shields.io/github/forks/qmk/qmk_firmware.svg?style=social&label=Fork)](https://github.com/qmk/qmk_firmware/)
+This repo is used by myself(I just wanted to save off my keymaps without merging them with the official repository).
 
-This is a keyboard firmware based on the [tmk\_keyboard firmware](https://github.com/tmk/tmk_keyboard) with some useful features for Atmel AVR and ARM controllers, and more specifically, the [OLKB product line](https://olkb.com), the [ErgoDox EZ](https://ergodox-ez.com) keyboard, and the Clueboard product line.
+I use "lucky" keymap on [corne](https://github.com/foostan/crkbd)(crkbd, corne keyboard). And lucky is designed by my self.
 
-## Documentation
+The Keyboard version is crkbd/rev4_1/standard and layout is 3x6_3_ex2.
 
-* [See the official documentation on docs.qmk.fm](https://docs.qmk.fm)
+My keymap is at ./keyboards/crkbd/keymaps/lucky.
 
-The docs are powered by [VitePress](https://vitepress.dev/). They are also viewable offline; see [Previewing the Documentation](https://docs.qmk.fm/#/contributing?id=previewing-the-documentation) for more details.
+## Show
 
-You can request changes by making a fork and opening a [pull request](https://github.com/qmk/qmk_firmware/pulls).
+![Keyboard Photo](./show/show.jpg)
 
-## Supported Keyboards
+## Key Map
 
-* [Planck](/keyboards/planck/)
-* [Preonic](/keyboards/preonic/)
-* [ErgoDox EZ](/keyboards/ergodox_ez/)
-* [Clueboard](/keyboards/clueboard/)
-* [Cluepad](/keyboards/clueboard/17/)
-* [Atreus](/keyboards/atreus/)
+![layer0](./show/0.png)
+![layer1](./show/1.png)
+![layer2](./show/2.png)
+![layer3](./show/3.png)
+![layer4](./show/4.png)
+![layer5](./show/5.png)
+![layer6](./show/6.png)
+![layer7](./show/7.png)
 
-The project also includes community support for [lots of other keyboards](/keyboards/).
+You can see that I still have some levels that I haven't used yet, maybe I'll save them for some special cases.
 
-## Maintainers
+## DIY
 
-QMK is developed and maintained by Jack Humbert of OLKB with contributions from the community, and of course, [Hasu](https://github.com/tmk). The OLKB product firmwares are maintained by [Jack Humbert](https://github.com/jackhumbert), the Ergodox EZ by [ZSA Technology Labs](https://github.com/zsa), the Clueboard by [Zach White](https://github.com/skullydazed), and the Atreus by [Phil Hagelberg](https://github.com/technomancy).
+### hardware
 
-## Official Website
+> [!TIP]
+> Every thing that you want is in [corne doc](https://github.com/foostan/crkbd/tree/main/docs).
 
-[qmk.fm](https://qmk.fm) is the official website of QMK, where you can find links to this page, the documentation, and the keyboards supported by QMK.
+I use "嘉立创" manufacture PCBs, and I have a 3D print in my home, so I can printer the shell by my self.
+
+I asked dad to help me with soldering( Love you dad).
+
+I use Short sharf.(For Chinese: 你可以在淘宝上找到卖矮轴和矮轴键帽, 并没有很贵).
+
+### software
+
+You can use [QMK Config](https://config.qmk.fm/) to generate the json file(Keymap file).
+
+I'm Arch user, I install qmk cli by `sudo pacman -S qmk`.
+
+QMK cli can help you generate keymap.c file by json file and compile it.
+
+Then follow the below steps to finish the fine configuration easily.
+
+1. Clone this or official repository. `git clone git@github.com:dty2/qmk_firmware.git`
+2. Set env `export QMK_HOME=/dir/to/qmk` in your '.zshrc' or '.bashrc'.
+3. Init qmk `qmk setup`
+4. Init keymap `qmk new-keyboard -kb corne/rev4_1/standard -km lucky` Or directly put the lucky dir in the directory where this document is located into the qmk_firmware/keyboard/crkbd/keymaps/ dir
+5. Change your json file to keymap.c, and use the new c file replace the old file in qmk_firmware/keyboard/crkbd/keymaps/ dir
+by  `qmk json2c -o keymap.c lucky.json`.
+6. Modify the config.h file and keymap.c file as required
+7. Compile out the uf2 file `qmk compile -kb corne/rev4_1/standard -km lucky` or `qmk compile -kb crkbd -km lucky`(if you want use defult keymap).
+8. Reset you keyboard, and mount it, and copy the uf2 file to the mounted dir, umount and then it is done.
+
+> [!TIP]
+> Press and hold the two keys on the upper left corner and the two keys on the upper right corner and then insert the USB port to reset.
+
+## Help Link
+
+[QMK Document](https://qmk.fm/)
+[QMK Config](https://config.qmk.fm/)
+[Corne](https://github.com/foostan/crkbd)
+
+## Other Solutions
+
+[Adam13531](https://github.com/Adam13531/qmk_firmware)

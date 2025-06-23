@@ -95,6 +95,9 @@ tags
 *.ttf
 *.otf
 
+!/show/*.jpg
+!/show/*.png
+
 # Things Travis sees
 /.vs
 id_rsa_*
