@@ -6,7 +6,7 @@ I use "lucky" keymap on [corne](https://github.com/foostan/crkbd)(crkbd, corne k
 
 The Keyboard version is crkbd/rev4_1/standard and layout is 3x6_3_ex2.
 
-My keymap is at ./keyboards/crkbd/keymaps/lucky.
+My keymap is at /keyboards/crkbd/keymaps/lucky.
 
 ## Show
 
@@ -14,31 +14,39 @@ My keymap is at ./keyboards/crkbd/keymaps/lucky.
 
 ## Key Map
 
-![layer0](./show/0.png)
-![layer1](./show/1.png)
-![layer2](./show/2.png)
-![layer3](./show/3.png)
-![layer4](./show/4.png)
-![layer5](./show/5.png)
-![layer6](./show/6.png)
-![layer7](./show/7.png)
+* Layer0
+    ![layer0](./show/0.png)
+* Layer1
+    ![layer1](./show/1.png)
+* Layer2
+    ![layer2](./show/2.png)
+* Layer3
+    ![layer3](./show/3.png)
+* Layer4
+    ![layer4](./show/4.png)
+* Layer5
+    ![layer5](./show/5.png)
+* Layer6
+    ![layer6](./show/6.png)
+* Layer7
+    ![layer7](./show/7.png)
 
 You can see that I still have some levels that I haven't used yet, maybe I'll save them for some special cases.
 
 ## DIY
 
-### hardware
+### Hardware
 
 > [!TIP]
 > Every thing that you want is in [corne doc](https://github.com/foostan/crkbd/tree/main/docs).
 
 I use "嘉立创" manufacture PCBs, and I have a 3D print in my home, so I can printer the shell by my self.
 
-I asked dad to help me with soldering( Love you dad).
+I asked dad to help me with soldering(♥️Love you dad).
 
 I use Short sharf.(For Chinese: 你可以在淘宝上找到卖矮轴和矮轴键帽, 并没有很贵).
 
-### software
+### Software
 
 You can use [QMK Config](https://config.qmk.fm/) to generate the json file(Keymap file).
 
@@ -64,7 +72,9 @@ by  `qmk json2c -o keymap.c lucky.json`.
 ## Help Link
 
 [QMK Document](https://qmk.fm/)
+
 [QMK Config](https://config.qmk.fm/)
+
 [Corne](https://github.com/foostan/crkbd)
 
 ## Other Solutions
