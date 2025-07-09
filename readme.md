@@ -14,6 +14,9 @@ My keymap is at /keyboards/crkbd/keymaps/lucky.
 
 ## Key Map
 
+> [!TIP]
+> Some keys may have slight changes, and new keys may be added to the 5678th level. This picture is for reference only.
+
 * Layer0
     ![layer0](./show/0.png)
 * Layer1
